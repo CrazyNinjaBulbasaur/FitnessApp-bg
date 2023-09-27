@@ -2,7 +2,9 @@ package com.otakufitness.fitnessApp.mapper;
 
 import com.otakufitness.fitnessApp.domain.Nutrition.Ingredient;
 import com.otakufitness.fitnessApp.domain.Nutrition.IngredientDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class IngredientMapper {
 
     public Ingredient mapToIngredient(final IngredientDto ingredientDto){

@@ -8,7 +8,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -46,6 +45,6 @@ public class Product {
             mappedBy = "product",
             fetch = FetchType.LAZY
     )
-    private List<Ingredient> ingredients = new ArrayList<>();
+    private List<Ingredient> ingredients;
 
 }

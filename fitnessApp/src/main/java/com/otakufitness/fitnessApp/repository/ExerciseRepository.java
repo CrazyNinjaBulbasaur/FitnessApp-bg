@@ -1,6 +1,6 @@
 package com.otakufitness.fitnessApp.repository;
 
-import com.otakufitness.fitnessApp.domain.Nutrition.Ingredient;
+import com.otakufitness.fitnessApp.domain.Fitness.Exercise;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,15 +10,17 @@ import java.util.Optional;
 
 @Transactional
 @Repository
-public interface IngredientRepository extends CrudRepository<Ingredient, Long> {
-    @Override
-    List<Ingredient> findAll();
+public interface ExerciseRepository extends CrudRepository <Exercise, Long> {
 
     @Override
-    Ingredient save(Ingredient ingredient);
+//    <S extends Exercise> S save(S entity);
+    Exercise save (Exercise exercise);
 
     @Override
-    Optional<Ingredient> findById(Long id);
+    Optional<Exercise> findById(Long id);
+
+    @Override
+    List<Exercise> findAll();
 
     @Override
     void deleteById(Long id);

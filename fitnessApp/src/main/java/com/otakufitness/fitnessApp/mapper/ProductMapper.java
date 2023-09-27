@@ -2,7 +2,9 @@ package com.otakufitness.fitnessApp.mapper;
 
 import com.otakufitness.fitnessApp.domain.Nutrition.Product;
 import com.otakufitness.fitnessApp.domain.Nutrition.ProductDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProductMapper {
 
     public Product mapToProduct(final ProductDto productDto) {
