@@ -1,15 +1,39 @@
 package com.otakufitness.fitnessApp.domain.Nutrition;
 
-import com.otakufitness.fitnessApp.domain.Nutrition.product.Product;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-public class Ingredient implements NutritionEntry{
+import java.math.BigDecimal;
 
-    double amount;
 
-    Product product;
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@Table(name = "INGREDIENTS")
+public class Ingredient {
 
-    @Override
-    public Product calculateNutritionData(double amount, Product product) {
-        return null;
-    }
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name="PRODUCT_ID", unique=true)
+    private long id;
+
+    @NotNull
+    @Column(name = "GRAMS")
+    private BigDecimal grams;
+
+
+    @ManyToOne(
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(name = "PRODUCT_ID")
+    private Product product;
+
+
 }
