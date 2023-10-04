@@ -1,12 +1,11 @@
 package com.otakufitness.fitnessApp.controller;
 
-import com.otakufitness.fitnessApp.domain.Nutrition.Ingredient;
-import com.otakufitness.fitnessApp.domain.Nutrition.IngredientDto;
+import com.otakufitness.fitnessApp.domain.nutrition.Ingredient;
+import com.otakufitness.fitnessApp.domain.nutrition.IngredientDto;
 import com.otakufitness.fitnessApp.mapper.IngredientMapper;
 import com.otakufitness.fitnessApp.repository.exceptions.IngredientNotFoundException;
 import com.otakufitness.fitnessApp.service.IngredientDbService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
 package com.otakufitness.fitnessApp.service;
 
-import com.otakufitness.fitnessApp.domain.Nutrition.Ingredient;
+import com.otakufitness.fitnessApp.domain.nutrition.Ingredient;
 import com.otakufitness.fitnessApp.repository.IngredientRepository;
 import com.otakufitness.fitnessApp.repository.exceptions.IngredientNotFoundException;
 import lombok.RequiredArgsConstructor;

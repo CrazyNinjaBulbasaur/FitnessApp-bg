@@ -1,11 +1,11 @@
-package com.otakufitness.fitnessApp.domain.Fitness;
+package com.otakufitness.fitnessApp.domain.fitness;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 
 import java.util.List;
 
-@Getter
+@Data
 @AllArgsConstructor
 public class ExerciseDto {
     private long id;

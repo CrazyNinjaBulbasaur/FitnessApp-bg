@@ -1,7 +1,7 @@
 package com.otakufitness.fitnessApp.service.facade;
 
-import com.otakufitness.fitnessApp.domain.Fitness.Exercise;
-import com.otakufitness.fitnessApp.domain.Fitness.ExerciseDto;
+import com.otakufitness.fitnessApp.domain.fitness.Exercise;
+import com.otakufitness.fitnessApp.domain.fitness.ExerciseDto;
 import com.otakufitness.fitnessApp.mapper.ExerciseMapper;
 import com.otakufitness.fitnessApp.repository.exceptions.ExerciseNotFoundException;
 import com.otakufitness.fitnessApp.service.ExerciseDbService;

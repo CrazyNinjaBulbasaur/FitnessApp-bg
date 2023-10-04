@@ -1,6 +1,6 @@
 package com.otakufitness.fitnessApp.repository;
 
-import com.otakufitness.fitnessApp.domain.Nutrition.Product;
+import com.otakufitness.fitnessApp.domain.nutrition.Product;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

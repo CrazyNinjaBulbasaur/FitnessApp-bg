@@ -1,4 +1,4 @@
-package com.otakufitness.fitnessApp.domain.Nutrition;
+package com.otakufitness.fitnessApp.domain.fitness;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -6,33 +6,27 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Exercise {
 
     @Id
     @GeneratedValue
     @NotNull
     @Column(unique=true)
     private long id;
-
     @NotNull
     private String name;
     @NotNull
-    private BigDecimal grams;
-    private BigDecimal calories;
-    private BigDecimal carbohydrates;
-    private BigDecimal fats;
-    private BigDecimal protein;
-
+    private String description;
+    @NotNull
+    private int caloriesBurnedInSixtyMinutes;
     @OneToMany(
-            mappedBy = "product"
+            mappedBy = "exercise"
     )
-    private List<Ingredient> ingredients;
-
+    private List<FitnessActivity> fitnessActivities;
 }

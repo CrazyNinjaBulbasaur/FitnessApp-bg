@@ -1,12 +1,12 @@
-package com.otakufitness.fitnessApp.domain.Nutrition;
+package com.otakufitness.fitnessApp.domain.nutrition;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-@Getter
+@Data
 @AllArgsConstructor
 public class ProductDto {
 

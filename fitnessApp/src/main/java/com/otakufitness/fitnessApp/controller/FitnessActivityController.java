@@ -1,8 +1,8 @@
 package com.otakufitness.fitnessApp.controller;
 
 
-import com.otakufitness.fitnessApp.domain.Fitness.FitnessActivity;
-import com.otakufitness.fitnessApp.domain.Fitness.FitnessActivityDto;
+import com.otakufitness.fitnessApp.domain.fitness.FitnessActivity;
+import com.otakufitness.fitnessApp.domain.fitness.FitnessActivityDto;
 import com.otakufitness.fitnessApp.mapper.FitnessActivityMapper;
 import com.otakufitness.fitnessApp.repository.exceptions.FitnessActivityNotFoundException;
 import com.otakufitness.fitnessApp.service.FitnessActivityDbService;

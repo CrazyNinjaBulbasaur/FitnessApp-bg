@@ -1,4 +1,4 @@
-package com.otakufitness.fitnessApp.domain.Nutrition;
+package com.otakufitness.fitnessApp.domain.nutrition;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -7,13 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Ingredient {
+public class Product {
 
     @Id
     @GeneratedValue
@@ -22,11 +22,17 @@ public class Ingredient {
     private long id;
 
     @NotNull
+    private String name;
+    @NotNull
     private BigDecimal grams;
+    private BigDecimal calories;
+    private BigDecimal carbohydrates;
+    private BigDecimal fats;
+    private BigDecimal protein;
 
-    @ManyToOne()
-    @JoinColumn(name = "PRODUCT_ID")
-    private Product product;
-
+    @OneToMany(
+            mappedBy = "product"
+    )
+    private List<Ingredient> ingredients;
 
 }

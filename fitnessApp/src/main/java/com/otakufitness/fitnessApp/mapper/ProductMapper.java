@@ -1,7 +1,7 @@
 package com.otakufitness.fitnessApp.mapper;
 
-import com.otakufitness.fitnessApp.domain.Nutrition.Product;
-import com.otakufitness.fitnessApp.domain.Nutrition.ProductDto;
+import com.otakufitness.fitnessApp.domain.nutrition.Product;
+import com.otakufitness.fitnessApp.domain.nutrition.ProductDto;
 import org.springframework.stereotype.Component;
 
 @Component

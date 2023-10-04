@@ -1,6 +1,6 @@
 package com.otakufitness.fitnessApp.service;
 
-import com.otakufitness.fitnessApp.domain.Fitness.Exercise;
+import com.otakufitness.fitnessApp.domain.fitness.Exercise;
 import com.otakufitness.fitnessApp.repository.ExerciseRepository;
 import com.otakufitness.fitnessApp.repository.exceptions.ExerciseNotFoundException;
 import lombok.RequiredArgsConstructor;
