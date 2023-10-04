@@ -4,7 +4,6 @@ import com.otakufitness.fitnessApp.domain.Nutrition.Ingredient;
 import com.otakufitness.fitnessApp.repository.IngredientRepository;
 import com.otakufitness.fitnessApp.repository.exceptions.IngredientNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class IngredientDbService {
 
-    @Autowired
     private final IngredientRepository repository;
 
     public List<Ingredient> getAllIngredients(){

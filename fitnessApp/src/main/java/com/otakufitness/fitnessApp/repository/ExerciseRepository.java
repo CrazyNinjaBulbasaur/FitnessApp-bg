@@ -6,22 +6,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Transactional
 @Repository
 public interface ExerciseRepository extends CrudRepository <Exercise, Long> {
 
     @Override
-//    <S extends Exercise> S save(S entity);
-    Exercise save (Exercise exercise);
-
-    @Override
-    Optional<Exercise> findById(Long id);
-
-    @Override
     List<Exercise> findAll();
 
-    @Override
-    void deleteById(Long id);
 }

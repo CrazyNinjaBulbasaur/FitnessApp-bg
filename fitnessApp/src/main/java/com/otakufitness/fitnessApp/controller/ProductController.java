@@ -35,14 +35,14 @@ public class ProductController {
         return ResponseEntity.ok(productMapper.mapToProductDto(productDbService.getProductById(productId)));
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping()
     public ResponseEntity<Void> addProduct(@RequestBody ProductDto productDto) {
         Product product = productMapper.mapToProduct(productDto);
         productDbService.saveProduct(product);
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping()
     public ResponseEntity<ProductDto> updateProduct(@RequestBody ProductDto productDto) {
         Product product= productMapper.mapToProduct(productDto);
         Product savedProduct = productDbService.saveProduct(product);

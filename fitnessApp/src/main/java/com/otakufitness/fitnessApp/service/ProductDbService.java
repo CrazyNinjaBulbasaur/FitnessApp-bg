@@ -4,7 +4,6 @@ import com.otakufitness.fitnessApp.domain.Nutrition.Product;
 import com.otakufitness.fitnessApp.repository.ProductRepository;
 import com.otakufitness.fitnessApp.repository.exceptions.ProductNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductDbService {
 
-    @Autowired
     private final ProductRepository repository;
 
     public List<Product> getAllProducts(){

@@ -11,7 +11,7 @@ public class ExerciseMapper {
         return new Exercise(exerciseDto.getId(),
                 exerciseDto.getName(),
                 exerciseDto.getDescription(),
-                exerciseDto.getCaloriesBurnedInOneHour(),
+                exerciseDto.getCaloriesBurnedInSixtySeconds(),
                 exerciseDto.getFitnessActivities()
         );
     }
@@ -20,7 +20,7 @@ public class ExerciseMapper {
         return new ExerciseDto(exercise.getId(),
                 exercise.getName(),
                 exercise.getDescription(),
-                exercise.getCaloriesBurnedInOneHour(),
+                exercise.getCaloriesBurnedInSixtyMinutes(),
                 exercise.getFitnessActivities()
         );
     }

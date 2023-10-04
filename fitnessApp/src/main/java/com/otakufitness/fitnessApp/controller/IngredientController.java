@@ -34,14 +34,14 @@ public class IngredientController {
         return ResponseEntity.ok(ingredientMapper.mapToIngredientDto(ingredientDbService.getIngredientById(ingredientId)));
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping()
     public ResponseEntity<Void> addIngredient(@RequestBody IngredientDto ingredientDto) {
         Ingredient ingredient = ingredientMapper.mapToIngredient(ingredientDto);
         ingredientDbService.saveIngredient(ingredient);
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping()
     public ResponseEntity<IngredientDto> updateIngredient(@RequestBody IngredientDto ingredientDto) {
         Ingredient ingredient= ingredientMapper.mapToIngredient(ingredientDto);
         Ingredient savedIngredient = ingredientDbService.saveIngredient(ingredient);

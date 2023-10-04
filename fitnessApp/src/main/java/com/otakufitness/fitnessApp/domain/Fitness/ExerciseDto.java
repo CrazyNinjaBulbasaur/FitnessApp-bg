@@ -11,8 +11,6 @@ public class ExerciseDto {
     private long id;
     private String name;
     private String description;
-
-    private int caloriesBurnedInOneHour;
-
+    private int caloriesBurnedInSixtySeconds;
     private List<FitnessActivity> fitnessActivities;
 }
