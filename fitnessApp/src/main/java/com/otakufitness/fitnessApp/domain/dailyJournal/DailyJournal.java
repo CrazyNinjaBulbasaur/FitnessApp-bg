@@ -28,17 +28,17 @@ public class DailyJournal {
 
     @ManyToMany
     @JoinTable(
-            name = "JOIN_DAILYJOURNALS_INGREDIENTS",
-            joinColumns = {@JoinColumn(name = "DAILYJOURNAL_ID", referencedColumnName = "DAILYJOURNAL_ID")},
-            inverseJoinColumns = {@JoinColumn(name = "INGREDIENT_ID", referencedColumnName = "INGREDIENT_ID")}
+            name = "JOIN_DAILY_JOURNALS_INGREDIENTS",
+            joinColumns = {@JoinColumn(name = "daily_journal_id")},
+            inverseJoinColumns = {@JoinColumn(name = "ingredient")}
     )
     private List<Ingredient> ingredients;
 
     @ManyToMany
     @JoinTable(
-            name = "JOIN_DAILYJOURNALS_FITNESSACTIVITIES",
-            joinColumns = {@JoinColumn(name = "DAILYJOURNAL_ID", referencedColumnName = "DAILYJOURNAL_ID")},
-            inverseJoinColumns = {@JoinColumn(name = "FITNESSACTIVITY_ID", referencedColumnName = "FITNESSACTIVITY_ID")}
+            name = "JOIN_DAILY_JOURNALS_FITNESSACTIVITIES",
+            joinColumns = {@JoinColumn(name = "daily_journal_id")},
+            inverseJoinColumns = {@JoinColumn(name = "fitness_activity_id")}
     )
     private List<FitnessActivity> fitnessActivities;
 

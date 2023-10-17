@@ -1,10 +1,8 @@
 package com.otakufitness.fitnessApp.controller;
 
-import com.otakufitness.fitnessApp.domain.nutrition.Ingredient;
 import com.otakufitness.fitnessApp.domain.nutrition.IngredientDto;
-import com.otakufitness.fitnessApp.mapper.IngredientMapper;
 import com.otakufitness.fitnessApp.repository.exceptions.IngredientNotFoundException;
-import com.otakufitness.fitnessApp.service.IngredientDbService;
+import com.otakufitness.fitnessApp.service.facade.IngredientFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,40 +15,32 @@ import java.util.List;
 @CrossOrigin("*")
 public class IngredientController {
 
-    private final IngredientDbService ingredientDbService;
-    private final IngredientMapper ingredientMapper;
+    private final IngredientFacade ingredientFacade;
 
     @GetMapping
     public ResponseEntity<List<IngredientDto>> getIngredients() {
-
-        return ResponseEntity.ok(ingredientDbService.getAllIngredients().stream()
-                .map(ingredientMapper::mapToIngredientDto)
-                .toList());
+        return ResponseEntity.ok(ingredientFacade.getAllIngredients());
     }
 
     @GetMapping(value = "{ingredientId}")
     public ResponseEntity<IngredientDto> getIngredient(@PathVariable long ingredientId) throws IngredientNotFoundException {
-        return ResponseEntity.ok(ingredientMapper.mapToIngredientDto(ingredientDbService.getIngredientById(ingredientId)));
+        return ResponseEntity.ok(ingredientFacade.getIngredientById(ingredientId));
     }
 
     @PostMapping()
     public ResponseEntity<Void> addIngredient(@RequestBody IngredientDto ingredientDto) {
-        Ingredient ingredient = ingredientMapper.mapToIngredient(ingredientDto);
-        ingredientDbService.saveIngredient(ingredient);
+        ingredientFacade.addIngredient(ingredientDto);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping()
     public ResponseEntity<IngredientDto> updateIngredient(@RequestBody IngredientDto ingredientDto) {
-        Ingredient ingredient= ingredientMapper.mapToIngredient(ingredientDto);
-        Ingredient savedIngredient = ingredientDbService.saveIngredient(ingredient);
-
-        return ResponseEntity.ok(ingredientMapper.mapToIngredientDto(savedIngredient));
+        return ResponseEntity.ok(ingredientFacade.updateIngredient(ingredientDto));
     }
 
     @DeleteMapping(value = "{ingredientId}")
     public ResponseEntity<Void> deleteIngredient(@PathVariable long ingredientId) {
-        ingredientDbService.deleteIngredientById(ingredientId);
+        ingredientFacade.deleteIngredient(ingredientId);
         return ResponseEntity.ok().build();
     }
 }

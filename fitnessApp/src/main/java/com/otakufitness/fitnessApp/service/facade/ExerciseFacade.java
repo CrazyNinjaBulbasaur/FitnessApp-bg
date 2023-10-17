@@ -13,6 +13,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ExerciseFacade {
+
     private final ExerciseDbService exerciseDbService;
     private final ExerciseMapper exerciseMapper;
 
@@ -37,5 +38,9 @@ public class ExerciseFacade {
         Exercise savedExercise = exerciseDbService.saveExercise(exercise);
 
         return exerciseMapper.mapToExerciseDto(savedExercise);
+    }
+
+    public void deleteExercise(long exerciseId){
+        exerciseDbService.deleteExerciseById(exerciseId);
     }
 }

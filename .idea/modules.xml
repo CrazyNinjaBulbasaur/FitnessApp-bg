@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Final Project.iml" filepath="$PROJECT_DIR$/.idea/Final Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Final Project.fitnessApp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Final Project.fitnessApp.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.otakufitness.fitnessApp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.otakufitness.fitnessApp.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fitnessApp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fitnessApp.main.iml" />
     </modules>
   </component>
