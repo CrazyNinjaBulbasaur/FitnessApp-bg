@@ -11,9 +11,8 @@ public class DailyJournalMapper {
         return new DailyJournal(
             dailyJournalDto.getId(),
             dailyJournalDto.getDate(),
-//            dailyJournalDto.getJournalEntries(),
-                dailyJournalDto.getIngredients(),
-                dailyJournalDto.getFitnessActivities()
+            dailyJournalDto.getIngredients(),
+            dailyJournalDto.getFitnessActivities()
         );
     }
 
@@ -21,7 +20,6 @@ public class DailyJournalMapper {
         return new DailyJournalDto(
                 dailyJournal.getId(),
                 dailyJournal.getDate(),
-//            dailyJournalDto.getJournalEntries(),
                 dailyJournal.getIngredients(),
                 dailyJournal.getFitnessActivities()
         );

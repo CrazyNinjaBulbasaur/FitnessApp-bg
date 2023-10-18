@@ -8,27 +8,28 @@ import org.springframework.stereotype.Component;
 public class ProductMapper {
 
     public Product mapToProduct(final ProductDto productDto) {
-        return new Product(productDto.getId(),
-                productDto.getName(),
-                productDto.getGrams(),
-                productDto.getCalories(),
-                productDto.getCarbohydrates(),
-                productDto.getFats(),
-                productDto.getProtein(),
-                productDto.getIngredients()
-        );
+        return new Product.ProductBuilder()
+                .id(productDto.getId())
+                .name(productDto.getName())
+                .grams(productDto.getGrams())
+                .calories(productDto.getCalories())
+                .carbohydrates(productDto.getCarbohydrates())
+                .proteins(productDto.getProteins())
+                .fats(productDto.getFats())
+                .ingredients(productDto.getIngredients())
+                .build();
     }
 
     public ProductDto mapToProductDto(final Product product) {
-        return new ProductDto(
-                product.getId(),
-                product.getName(),
-                product.getGrams(),
-                product.getCalories(),
-                product.getCarbohydrates(),
-                product.getFats(),
-                product.getProtein(),
-                product.getIngredients()
-        );
+        return new ProductDto.ProductDtoBuilder()
+                .id(product.getId())
+                .name(product.getName())
+                .grams(product.getGrams())
+                .calories(product.getCalories())
+                .carbohydrates(product.getCarbohydrates())
+                .proteins(product.getProteins())
+                .fats(product.getFats())
+                .ingredients(product.getIngredients())
+                .build();
     }
 }

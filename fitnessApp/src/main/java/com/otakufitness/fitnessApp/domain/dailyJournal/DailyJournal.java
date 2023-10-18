@@ -21,6 +21,7 @@ public class DailyJournal {
     @NotNull
     @Column(unique=true)
     private long id;
+    @Column(unique=true)
     private LocalDate date;
 
 //    @ManyToMany
